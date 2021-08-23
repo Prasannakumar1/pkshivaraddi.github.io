@@ -185,7 +185,7 @@
 
         <div class="section-title">
           <h2>Skills</h2>
-          <p>Technical skills, also known as hard skills, are qualities acquired by using and gaining expertise in performing physical or digital tasks. My different kinds of technical skills are.</p>
+          <p> My different kinds of technical hard skills are.</p>
         </div>
 
         <div class="row skills-content">
@@ -622,27 +622,29 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form  method="POST" name="google-sheet" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <input type="text" name="Name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                  <input type="email" class="form-control" name="Email" id="email" data-rule="email" data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
+                <label for="name">Mobile Number</label>
+                  <input type="number" class="form-control" name="Mobile Number" id="mobile" data-msg="Please enter a valid mobile no" />
               </div>
               <div class="form-group">
                 <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <input type="text" class="form-control" name="Subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                <textarea class="form-control" name="Message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
@@ -675,7 +677,7 @@
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-  </footer><!-- End  Footer --> -->
+  </footer><!-- End  Footer  -->
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>  
 
@@ -694,6 +696,19 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwFMsPy9BclPX2E7U12EfROdA0CcRxlrFTPn4sj2c2TuYnxK0f9-0SEZM65jcaB_g979g/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+</script>
 
 </body>
 
