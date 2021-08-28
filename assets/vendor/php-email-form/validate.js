@@ -101,7 +101,7 @@
 
     if( ! action ) {
       this_form.find('.loading').slideUp();
-      this_form.find('.error-message').slideDown().html('Thank you!');
+      this_form.find('.error-message').slideDown().html('The form action property is not set!');
       return false;
     }
     
@@ -126,7 +126,7 @@
   function php_email_form_submit(this_form, action, data) {
     $.ajax({
       type: "POST",
-     url: action,
+      url: action,
       data: data,
       timeout: 40000
     }).done( function(msg){
