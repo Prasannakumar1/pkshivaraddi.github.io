@@ -123,10 +123,10 @@
     return true;
   });
 
-  function php_email_form_submit(this_form, action, data) {
+  function php_email_form_submit(this_form, data) {
     $.ajax({
       type: "POST",
-      url: action,
+     <!-- url: action,-->
       data: data,
       timeout: 40000
     }).done( function(msg){
