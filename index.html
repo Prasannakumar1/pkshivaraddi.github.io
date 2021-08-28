@@ -826,14 +826,14 @@ html {
 
 
 <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbw_W_ogzPAVje3x_xhFSWPnh6XvwpW8P_taaRlmSafBcT2_b2C9EkmkKOmUG_MQYFlz/exec'
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzcPKkn2bVHP2m18a9lf6tZDqWES-PVQ4tDl3Ps-u0J_cc0RsM05S7F9OVQ3zTcF5uHEg/exec'
             const form = document.forms['google-sheet']
           
             form.addEventListener('submit', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(new Date()+form)})
                 .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-                .catch(error => console.error('Error!',error.message ))
+                .catch(error => console.error('Error!',error.message))
             })
 </script>
 
